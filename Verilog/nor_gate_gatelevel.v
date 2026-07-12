@@ -1,4 +1,4 @@
-module and_gate(y, a, b);
+module nor_gate(y, a, b);
 
 input a, b;
 output y;
