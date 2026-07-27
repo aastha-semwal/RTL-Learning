@@ -14,8 +14,9 @@ begin
         Q <= 4'b0000;
 
     else
-        Q <= {~Q[0], Q[3:1]};
+        Q <= {Q[2], Q[1], Q[0], ~Q[3]};
 
 end
 
 endmodule
+
