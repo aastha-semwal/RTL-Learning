@@ -1,104 +1,79 @@
 # Day 21 - PWM Generator
 
-## Objective
+## 📌 Project Overview
+Designed an 8-bit PWM (Pulse Width Modulation) Generator in Verilog HDL.
 
-Design and verify an 8-bit PWM (Pulse Width Modulation) Generator using Verilog HDL.
-
----
-
-# Theory
-
-PWM (Pulse Width Modulation) is a technique used to control the average power delivered to a load by changing the duty cycle while keeping the frequency constant.
+The PWM signal is generated using an 8-bit counter and an adjustable duty cycle input.
 
 ---
 
-# Block Diagram
-
-Clock
-
-↓
-
-8-bit Counter
-
-↓
-
-Comparator
-
-↓
-
-PWM Output
+## 📚 Topics Covered
+- Pulse Width Modulation (PWM)
+- 8-bit Counter
+- Duty Cycle Control
+- Sequential Logic
+- Digital Design using Verilog HDL
 
 ---
 
-# Inputs
-
-- clk
-- reset
-- duty_cycle [7:0]
-
----
-
-# Output
-
-- pwm_out
+## 📂 Files
+- pwm_generator.v
+- pwm_generator_tb.v
+- README.md
 
 ---
 
-# Duty Cycle Examples
-
-0 → 0%
-
-64 → 25%
-
-128 → 50%
-
-192 → 75%
-
-255 → 100%
-
----
-
-# Applications
-
-- LED Brightness Control
-- DC Motor Speed Control
-- Servo Motor Control
-- FPGA Designs
-- Power Electronics
-
----
-
-# Tools Used
-
+## ⚙️ Tools Used
 - Verilog HDL
 - Icarus Verilog
 - GTKWave
 - VS Code
-- Git
-- GitHub
+- Git & GitHub
 
 ---
 
-# Interview Questions
+## ▶️ Simulation Flow
 
-1. What is PWM?
-2. What is Duty Cycle?
-3. How is PWM generated?
-4. Why is a counter used in PWM?
-5. Difference between PWM Frequency and Duty Cycle?
+Compile
+
+```bash
+iverilog -o pwm_generator_sim pwm_generator.v pwm_generator_tb.v
+```
+
+Run
+
+```bash
+vvp pwm_generator_sim
+```
+
+Open Waveform
+
+```bash
+gtkwave pwm_generator.vcd
+```
 
 ---
 
-# GATE Notes
+## 🧪 Test Cases
 
-PWM = Counter + Comparator
-
-Duty Cycle = TON / (TON + TOFF)
+| Duty Cycle | Decimal Value |
+|------------|--------------:|
+| 25% | 64 |
+| 50% | 128 |
+| 75% | 192 |
+| 100% | 255 |
+| 0% | 0 |
 
 ---
 
-## Author
+## ✅ Results
+- Successfully Compiled
+- Successfully Simulated
+- Verified using GTKWave
+- PWM output generated correctly for different duty cycles
 
-Aastha Semwal
+---
 
-RTL Learning Journey
+## 📅 RTL Learning Progress
+
+**Day 21** of my RTL Design Learning Journey.
