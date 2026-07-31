@@ -25,17 +25,21 @@ initial
 begin
 
     $dumpfile("pwm_generator.vcd");
-    $dumpvars(0, pwm_generator_tb);
+    $dumpvars(0, uut);
 
-    $monitor("Time=%0t Reset=%b Duty=%d PWM=%b",
-              $time, reset, duty_cycle, pwm_out);
+    $monitor("Time=%0t Reset=%b Counter=%d Duty=%d PWM=%b",
+         $time,
+         reset,
+         uut.counter,
+         duty_cycle,
+         pwm_out);
 
     clk = 0;
-    reset = 1;
-    duty_cycle = 8'd64;     // 25%
+reset = 1;
+duty_cycle = 8'd64;
 
-    @(posedge clk);
-    reset = 0;
+#20;
+reset = 0;
 
     repeat(260)
         @(posedge clk);
